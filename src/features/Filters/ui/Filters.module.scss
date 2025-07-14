@@ -4,6 +4,12 @@
     flex-wrap: wrap;
     gap: 10px;
 
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
     &__search,
     &__date-input,
     &__reset-button {
@@ -17,11 +23,16 @@
         transition:
             border-color 0.2s,
             box-shadow 0.2s;
+        width: auto;
 
         &:focus {
             outline: none;
             border-color: #5234ff;
             box-shadow: 0 0 0 2px rgba(82, 52, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            width: 100%;
         }
     }
 
@@ -29,6 +40,10 @@
         color: #555;
         font-size: 16px;
         user-select: none;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
     }
 
     &__reset-button {

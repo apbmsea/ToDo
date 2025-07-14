@@ -15,6 +15,18 @@ const Filters: React.FC = () => {
     (state: RootState) => state.filters
   );
 
+  const handleStartChange = (value: string) => {
+    if (!endDate || value <= endDate) {
+      dispatch(setStartDate(value));
+    }
+  };
+
+  const handleEndChange = (value: string) => {
+    if (!startDate || value >= startDate) {
+      dispatch(setEndDate(value));
+    }
+  };
+
   return (
     <section className={style["filters"]}>
       <input
@@ -28,14 +40,16 @@ const Filters: React.FC = () => {
         className={style["filters__date-input"]}
         type="datetime-local"
         value={startDate ?? ""}
-        onChange={(e) => dispatch(setStartDate(e.target.value))}
+        max={endDate ?? ""}
+        onChange={(e) => handleStartChange(e.target.value)}
       />
       <span className={style["filters__dash"]}> - </span>
       <input
         className={style["filters__date-input"]}
         type="datetime-local"
         value={endDate ?? ""}
-        onChange={(e) => dispatch(setEndDate(e.target.value))}
+        min={startDate ?? ""}
+        onChange={(e) => handleEndChange(e.target.value)}
       />
 
       <button

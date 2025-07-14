@@ -16,6 +16,11 @@
         background-color: #f0f0f0;
         border-bottom: 1px solid #ddd;
         border-radius: 12px 12px 0 0;
+
+        @media (max-width: 768px) {
+            font-size: 1.1rem;
+            padding: 12px;
+        }
     }
 
     ul {
@@ -28,6 +33,11 @@
         gap: 12px;
         padding-inline: 16px;
         list-style: none;
+
+        @media (max-width: 768px) {
+            padding-inline: 10px;
+            gap: 10px;
+        }
     }
 
     ul::-webkit-scrollbar {

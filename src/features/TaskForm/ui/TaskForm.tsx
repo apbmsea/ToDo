@@ -118,6 +118,11 @@ const TaskForm: React.FC = () => {
                   ? formatToLocalTime(new Date(task.startDate))
                   : ""
               }
+              max={
+                task.endDate
+                  ? formatToLocalTime(new Date(task.endDate))
+                  : undefined
+              }
               onChange={(e) => {
                 dispatch(setStartDate(e.target.value));
                 dispatch(updateTask({ ...task, startDate: e.target.value }));
@@ -132,6 +137,11 @@ const TaskForm: React.FC = () => {
               className={style["task-form__input"]}
               value={
                 task.endDate ? formatToLocalTime(new Date(task.endDate)) : ""
+              }
+              min={
+                task.startDate
+                  ? formatToLocalTime(new Date(task.startDate))
+                  : undefined
               }
               onChange={(e) => {
                 dispatch(setEndDate(e.target.value));
