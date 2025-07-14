@@ -1,0 +1,45 @@
+.tasks-column {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    width: 100%;
+    background-color: #fafafa;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+    h2 {
+        padding: 16px;
+        margin: 0;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #333;
+        background-color: #f0f0f0;
+        border-bottom: 1px solid #ddd;
+        border-radius: 12px 12px 0 0;
+    }
+
+    ul {
+        padding-block: 15px;
+        margin: 0;
+        flex: 1;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding-inline: 16px;
+        list-style: none;
+    }
+
+    ul::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    ul::-webkit-scrollbar-thumb {
+        background-color: #bbb;
+        border-radius: 4px;
+    }
+
+    ul::-webkit-scrollbar-thumb:hover {
+        background-color: #999;
+    }
+}

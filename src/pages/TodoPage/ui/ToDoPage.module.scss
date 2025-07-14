@@ -1,0 +1,13 @@
+.todo-page {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px;
+        gap: 10px;
+        height: calc(100dvh - 15%);
+    }
+}
